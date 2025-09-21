@@ -82,7 +82,7 @@ src/
 ### 1. Clone o repositório
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/PedroGoncalves-Dev/GeoAgroMap-api
 cd geo-agro-map-api
 ```
 
