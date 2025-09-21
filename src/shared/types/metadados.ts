@@ -1,51 +1,51 @@
-export type ChaveSumarizacao = 'periodo' | 'nivelTerritorial';
+export type KeySummarization = 'periodo' | 'nivelTerritorial';
 
-export interface Periodicidade {
+export interface Periodicity {
   frequencia: string;
   inicio: number;
   fim: number;
 }
 
-export interface NivelTerritorial {
+export interface TerritorialLevel {
   Administrativo: string[];
   Especial: string[];
   IBGE: string[];
 }
 
-export interface Variavel {
+export interface Variable {
   id: number;
   nome: string;
   unidade: string;
-  sumarizacao: ChaveSumarizacao[];
+  sumarizacao: KeySummarization[];
 }
 
-export interface ClassificacaoCategoria {
+export interface ClassificationCategory {
   id: number;
   nome: string;
   unidade: string | null;
   nivel: number;
 }
 
-export interface ClassificacaoSumarizacao {
+export interface ClassificationSummary {
   status: boolean;
   excecao: number[];
 }
 
-export interface Classificacao {
+export interface Classification {
   id: number;
   nome: string;
-  sumarizacao: ClassificacaoSumarizacao;
-  categorias: ClassificacaoCategoria[];
+  sumarizacao: ClassificationSummary;
+  categorias: ClassificationCategory[];
 }
 
-export interface TabelaSidraDetalhe {
+export interface TableSidraDetail {
   id: number;
   nome: string;
   URL: string;
   pesquisa: string;
   assunto: string;
-  periodicidade: Periodicidade;
-  nivelTerritorial: NivelTerritorial;
-  variaveis: Variavel[];
-  classificacoes: Classificacao[];
+  periodicidade: Periodicity;
+  nivelTerritorial: TerritorialLevel;
+  variaveis: Variable[];
+  classificacoes: Classification[];
 }

@@ -5,13 +5,28 @@ import { FiltersService } from './filters.service';
 export class FiltersController {
   constructor(private readonly filtersService: FiltersService) {}
 
-  @Get('periods/:idTabela')
-  async getFiltersPeriods(@Param('idTabela') idTabela: string) {
-    return await this.filtersService.getFiltersPeriods(idTabela);
+  @Get('periods/:idTable')
+  async getFiltersPeriods(@Param('idTable') idTable: string) {
+    return await this.filtersService.getFiltersPeriods(idTable);
   }
 
-  @Get('metadados/:idTabela')
-  async getFiltersMetadados(@Param('idTabela') idTabela: string) {
-    return await this.filtersService.getFiltersMetadados(idTabela);
+  @Get('metadados/:idTable')
+  async getFiltersMetadados(@Param('idTable') idTable: string) {
+    return await this.filtersService.getFiltersMetadados(idTable);
+  }
+
+  @Get('ufs')
+  async getFiltersUfs() {
+    return await this.filtersService.getFiltersUfs();
+  }
+
+  @Get('municipalities/:idUF')
+  async getFiltersMunicipalitiesByUf(@Param('idUF') idUF: string) {
+    return await this.filtersService.getFiltersMunicipalitiesByUf(idUF);
+  }
+
+  @Get('regions')
+  async getFiltersRegions() {
+    return await this.filtersService.getFiltersRegions();
   }
 }
