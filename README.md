@@ -197,6 +197,24 @@ Este projeto está sob a licença UNLICENSED.
 
 ---
 
+## 🔗 URLs das APIs IBGE Utilizadas
+
+### API de Agregados (SIDRA)
+
+- **Períodos**: `https://servicodados.ibge.gov.br/api/v3/agregados/{idTable}/periodos`
+- **Metadados**: `https://servicodados.ibge.gov.br/api/v3/agregados/{idTable}/metadados`
+- **Dados Agregados**: `https://servicodados.ibge.gov.br/api/v3/agregados/{idTable}/periodos/{periods}/variaveis/{variables}?localidades={locality}[all]&classificacao={idClassification}[{products}]`
+
+### API de Localidades
+
+- **Estados (UFs)**: `https://servicodados.ibge.gov.br/api/v1/localidades/estados`
+- **Municípios por UF**: `https://servicodados.ibge.gov.br/api/v1/localidades/estados/{idUF}/municipios`
+- **Regiões**: `https://servicodados.ibge.gov.br/api/v1/localidades/regioes`
+
+### API de Malhas Territoriais
+
+- **Dados Geoespaciais**: `https://servicodados.ibge.gov.br/api/v4/malhas/paises/BR?formato=application/vnd.geo+json&qualidade=maxima&intrarregiao={intraRegion}`
+
 ## 📚 Documentação das APIs IBGE
 
 - [API SIDRA](https://servicodados.ibge.gov.br/api/docs/agregados)
