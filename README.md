@@ -122,6 +122,111 @@ npm run start:prod
 
 A aplicação estará disponível em: `http://localhost:3001`
 
+## 🐳 Executando com Docker
+
+### Pré-requisitos
+
+- **Docker** (versão 20 ou superior)
+- **Docker Compose** (versão 2 ou superior)
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/PedroGoncalves-Dev/GeoAgroMap-api
+cd geo-agro-map-api
+```
+
+### 2. Construir e executar com Docker Compose
+
+#### Primeira execução (com build)
+
+```bash
+docker-compose up --build
+```
+
+#### Execuções subsequentes
+
+```bash
+docker-compose up
+```
+
+#### Executar em background (detached)
+
+```bash
+docker-compose up -d
+```
+
+### 3. Acessar a aplicação
+
+A aplicação estará disponível em: `http://localhost:3001`
+
+### 4. Comandos úteis de gerenciamento
+
+#### Parar a aplicação
+
+```bash
+docker-compose down
+```
+
+#### Ver logs da aplicação
+
+```bash
+docker-compose logs
+```
+
+#### Ver logs em tempo real
+
+```bash
+docker-compose logs -f
+```
+
+#### Forçar rebuild completo
+
+```bash
+docker-compose up --build --force-recreate
+```
+
+#### Listar containers rodando
+
+```bash
+docker-compose ps
+```
+
+#### Executar comandos dentro do container
+
+```bash
+# Acessar o shell do container
+docker-compose exec app sh
+
+# Executar comandos específicos
+docker-compose exec app yarn lint
+docker-compose exec app yarn test
+```
+
+### 5. Desenvolvimento com Docker
+
+O ambiente Docker está configurado para desenvolvimento com:
+
+- ✅ **Hot-reload**: As mudanças no código são refletidas automaticamente
+- ✅ **Volume mapping**: Código fonte mapeado para o container
+- ✅ **Persistência**: node_modules persistente entre execuções
+- ✅ **Debugging**: Porta 3001 exposta para acesso local
+
+### 6. Estrutura dos arquivos Docker
+
+#### Dockerfile
+
+- Base: `node:22-alpine`
+- Package manager: `yarn` (com corepack)
+- Porta: `3001`
+- Comando: `yarn dev` (desenvolvimento com watch)
+
+#### docker-compose.yml
+
+- Mapeamento de volumes para desenvolvimento
+- Variáveis de ambiente configuradas
+- Porta 3001 exposta no host
+
 ## 🔗 Endpoints da API
 
 ### Filtros
